@@ -39,7 +39,7 @@ def main(
 
     # Fit data into model
     logger.debug("----------Model Fitting----------")
-    sed.fit(X_train, y_train, epochs=1)
+    sed.fit(X_train, y_train, epochs=10)
 
     # Make prediction and evaluate
     logger.debug("----------Model Evaluation----------")
