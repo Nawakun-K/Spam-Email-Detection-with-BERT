@@ -8,7 +8,6 @@ def main(
     ):
 
     # Load data from ./assets/spam_data.csv
-    logger.info("Load Data")
     df = pd.read_csv(data_source)
 
     # Downsampling 'Ham' data to avoid overfitting
@@ -18,7 +17,9 @@ def main(
     df_ham_downsampled = df_ham.sample(df_spam.shape[0])
     df_balanced = pd.concat([df_spam , df_ham_downsampled])
 
-    logger.info(df_balanced['Category'].value_counts())
+    # Preprocessing data
+    df_balanced['spam'] = df_balanced['Category'].apply(lambda x:1 if x == 'spam' else 0)
+    print(df_balanced.sample(4))
 
 
 if __name__ == "__main__":
