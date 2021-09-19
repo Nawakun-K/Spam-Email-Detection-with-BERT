@@ -184,7 +184,6 @@ dmypy.json
 
 *.csv
 *.json
-*.txt
 
 # VS Code
 *.code-workspace
